@@ -1,9 +1,9 @@
 FROM python:3.6-slim-stretch as build
 
 # Setup build dependencies
-RUN apt update \
-&& apt install -y python3-dev build-essential wget libxml2-dev libproj-dev libgeos-dev libsqlite3-dev zlib1g-dev pkg-config \
- && apt clean
+RUN apt-get update \
+ && apt-get install -y python3-dev build-essential wget libxml2-dev libproj-dev libgeos-dev libsqlite3-dev zlib1g-dev pkg-config \
+ && apt-get clean
 
 
 RUN wget "https://www.sqlite.org/2018/sqlite-autoconf-3230100.tar.gz" && tar xzf sqlite-autoconf-3230100.tar.gz \
